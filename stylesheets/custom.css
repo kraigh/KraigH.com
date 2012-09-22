@@ -51,8 +51,19 @@ h1 span:hover {
 	text-shadow: -2px 2px 0 #1BB0CE, -4px 4px 0 #4F8699, -6px 6px 0 #6A5E72, -8px 8px 0 #563444;
 }
 
+#content h2 {
+	margin-top: -20px;
+	color: #ebe9e5;
+	font: 100 3em "omnes-pro",sans-serif;
+	word-spacing: .1em;
+	text-shadow: -2px 2px 0px #563444;
+}
+
+#email {
+	padding-top: 80px;
+}
+
 #content a {
-	margin-top: 20px;
 	color: #ebe9e5;
 	word-spacing: .1em;
 	font: 100 3em "omnes-pro",sans-serif;
