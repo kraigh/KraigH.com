@@ -1,0 +1,49 @@
+body {
+	background: url(../images/grid2.png) repeat;
+}
+
+#content {
+	margin-top: 150px;
+}
+
+header {
+	width: 100%;
+}
+
+#content h1 {
+	text-shadow: -3px 3px 0 #1BB0CE, -6px 6px 0 #4F8699, -9px 9px 0 #6A5E72, -12px 12px 0 #563444;
+	color: #DAD6CA;
+	font: 100 8em "omnes-pro",sans-serif;
+	word-spacing: .1em;
+}
+
+h1 .char16 {
+vertical-align: top;
+margin-left: 0.127em;
+display: inline-block;
+position: relative;
+top: 0.089em;
+-webkit-transform: rotate(29deg);
+-moz-transform: rotate(29deg);
+-ms-transform: rotate(29deg);
+-o-transform: rotate(29deg);
+transform: rotate(29deg);
+}
+
+
+h1 span:hover {
+	text-shadow: -2px 2px 0 #1BB0CE, -4px 4px 0 #4F8699, -6px 6px 0 #6A5E72, -8px 8px 0 #563444;
+}
+
+#content a {
+	margin-top: 20px;
+	color: #ebe9e5;
+	word-spacing: .1em;
+	font: 100 3em "omnes-pro",sans-serif;
+}
+
+#content a:hover {
+	text-shadow: -2px 2px 0px #563444;
+}
+
+
