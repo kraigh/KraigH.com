@@ -18,17 +18,33 @@ header {
 }
 
 h1 .char16 {
-vertical-align: top;
-margin-left: 0.127em;
-display: inline-block;
-position: relative;
-top: 0.089em;
--webkit-transform: rotate(29deg);
--moz-transform: rotate(29deg);
--ms-transform: rotate(29deg);
--o-transform: rotate(29deg);
-transform: rotate(29deg);
+	vertical-align: top;
+	margin-left: 0.057em;
+	display: inline-block;
+	position: relative;
+	top: 0.051em;
+	-webkit-transform: rotate(17deg);
+	-moz-transform: rotate(17deg);
+	-ms-transform: rotate(17deg);
+	-o-transform: rotate(17deg);
+	transform: rotate(17deg);
+
 }
+
+h1 .char16:hover {
+	vertical-align: top;
+	margin-left: 0.114em;
+	display: inline-block;
+	position: relative;
+	top: 0.108em;
+	-webkit-transform: rotate(26deg);
+	-moz-transform: rotate(26deg);
+	-ms-transform: rotate(26deg);
+	-o-transform: rotate(26deg);
+	transform: rotate(26deg);
+
+}
+
 
 
 h1 span:hover {
