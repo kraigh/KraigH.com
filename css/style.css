@@ -1,0 +1,119 @@
+body {
+  background: url(../img/grid2.png) repeat;
+}
+
+body {
+  margin-top: 100px;
+}
+
+
+h1 {
+  text-shadow: -2px 2px 0 #1BB0CE, -4px 4px 0 #4F8699, -6px 6px 0 #6A5E72, -8px 8px 0 #563444;
+  color: #DAD6CA;
+  font: 100 6em "omnes-pro",sans-serif;
+  word-spacing: .1em;
+  letter-spacing: .04em;
+  margin-bottom: 20px;
+}
+
+h1 .char16 {
+  vertical-align: top;
+  margin-left: 0.057em;
+  display: inline-block;
+  position: relative;
+  top: 0.051em;
+  -webkit-transform: rotate(17deg);
+  -moz-transform: rotate(17deg);
+  -ms-transform: rotate(17deg);
+  -o-transform: rotate(17deg);
+  transform: rotate(17deg);
+
+}
+
+h1 .char16:hover {
+  vertical-align: top;
+  margin-left: 0.114em;
+  display: inline-block;
+  position: relative;
+  top: 0.108em;
+  -webkit-transform: rotate(26deg);
+  -moz-transform: rotate(26deg);
+  -ms-transform: rotate(26deg);
+  -o-transform: rotate(26deg);
+  transform: rotate(26deg);
+
+}
+
+
+
+h1 span:hover {
+  text-shadow: -1px 1px 0 #1BB0CE, -2px 2px 0 #4F8699, -4px 4px 0 #6A5E72, -6px 6px 0 #563444;
+}
+
+h2 {
+  margin-top: -20px;
+  color: #ebe9e5;
+  font: 100 2em "omnes-pro",sans-serif;
+  word-spacing: .1em;
+  text-shadow: -2px 2px 0px #563444;
+}
+
+h3 {
+  color: rgb(204, 204, 204);
+  font: 100 2em "omnes-pro",sans-serif;
+}
+
+a {
+  color: #ebe9e5;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #ebe9e5;
+  font-style: oblique;
+}
+
+.left {
+  float: left;
+  margin-right: 60px;
+}
+
+#email {
+  color: #ebe9e5;
+  word-spacing: .1em;
+  font: 200 3em "omnes-pro",sans-serif;
+  text-shadow: -2px 2px 0px #563444;
+}
+
+p {
+  color: rgb(204, 204, 204);
+  font: 200 1em "omnes-pro",sans-serif;
+  letter-spacing: .06em;
+}
+
+ul {
+  list-style: none;
+  color: rgb(204, 204, 204);
+  font: 200 1em "omnes-pro",sans-serif;
+  letter-spacing: .06em;
+}
+
+ul li {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+ul li:before {
+  content: "- ";
+}
+
+.footer {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.footer li {
+  font-size: 1.5em;
+}
+
+

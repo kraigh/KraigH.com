@@ -13,7 +13,7 @@ header {
 #content h1 {
 	text-shadow: -3px 3px 0 #1BB0CE, -6px 6px 0 #4F8699, -9px 9px 0 #6A5E72, -12px 12px 0 #563444;
 	color: #DAD6CA;
-	font: 100 8em "omnes-pro",sans-serif;
+	font: 200 8em "omnes-pro",sans-serif;
 	word-spacing: .1em;
 }
 
@@ -54,7 +54,7 @@ h1 span:hover {
 #content h2 {
 	margin-top: -20px;
 	color: #ebe9e5;
-	font: 100 3em "omnes-pro",sans-serif;
+	font: 200 3em "omnes-pro",sans-serif;
 	word-spacing: .1em;
 	text-shadow: -2px 2px 0px #563444;
 }
@@ -66,11 +66,21 @@ h1 span:hover {
 #content a {
 	color: #ebe9e5;
 	word-spacing: .1em;
-	font: 100 3em "omnes-pro",sans-serif;
+	font: 200 3em "omnes-pro",sans-serif;
 }
 
 #content a:hover {
 	text-shadow: -2px 2px 0px #563444;
+}
+
+#inner {
+	margin: 30px;
+	color: rgb(204, 204, 204);
+}
+
+#inner h3 {
+	color: rgb(204, 204, 204);
+	font: 200 4em "omnes-pro",sans-serif;
 }
 
 

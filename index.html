@@ -1,42 +1,124 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]> <html class="no-js" lang="en"> <![endif]-->
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
 <head>
-  <meta charset="utf-8" />
-  <!-- Set the viewport width to device width for mobile -->
+	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Kraig Hufstedler</title>
-  <link rel="stylesheet" href="stylesheets/foundation.min.css">
-  <link rel="stylesheet" href="stylesheets/app.css">
-  <link rel="stylesheet" href="stylesheets/custom.css">
+  <title>Foundation 4</title>
+
+  <link rel="stylesheet" href="css/normalize.css" />
+
+  <link rel="stylesheet" href="css/foundation.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script src="javascripts/modernizr.foundation.js"></script>
-  <script src="javascripts/jquery.lettering-0.6.1.min.js"></script>
+    <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+
+  <script src="js/foundation.min.js"></script>
+  <!--
+
+  <script src="js/foundation/foundation.js"></script>
+
+  <script src="js/foundation/foundation.alerts.js"></script>
+
+  <script src="js/foundation/foundation.clearing.js"></script>
+
+  <script src="js/foundation/foundation.cookie.js"></script>
+
+  <script src="js/foundation/foundation.dropdown.js"></script>
+
+  <script src="js/foundation/foundation.forms.js"></script>
+
+  <script src="js/foundation/foundation.joyride.js"></script>
+
+  <script src="js/foundation/foundation.magellan.js"></script>
+
+  <script src="js/foundation/foundation.orbit.js"></script>
+
+  <script src="js/foundation/foundation.placeholder.js"></script>
+
+  <script src="js/foundation/foundation.reveal.js"></script>
+
+  <script src="js/foundation/foundation.section.js"></script>
+
+  <script src="js/foundation/foundation.tooltips.js"></script>
+
+  <script src="js/foundation/foundation.topbar.js"></script>
+
+  -->
+
+  <script>
+    $(document).foundation();
+  </script>
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+  <script src="js/vendor/jquery.lettering-0.6.1.min.js"></script>
   <script type="text/javascript" src="//use.typekit.net/xeu1qvt.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <!-- IE Fix for HTML5 Tags -->
-  <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+
 </head>
 <body>
-<div class="row" id="content">
-<div class="twelve columns">
-	<h1 class="fancy_title">Kraig Hufstedler</h1>
-	<h2>Web Development</h2>
-	<div id="email">
-		<a href="mailto:kraig.hufstedler@gmail.com">kraig.hufstedler@gmail.com</a>
-	</div>
-</div> <!--/.twelve columns-->
-</div> <!--/.row-->
-<!--  <script src="javascripts/foundation.min.js"></script>
-  <script src="javascripts/app.js"></script>-->
-  <script>
-    $(document).ready(function() {
-      $(".fancy_title").lettering();
-    });
-  </script>
+
+<div class="row">
+  <div class="large-12 columns">
+    <h1 class="fancy_title">Kraig Hufstedler</h1>
+    <h2 class="left">Web Development</h2>
+    <h2><a href="mailto:kraig.hufstedler@gmail.com">kraig.hufstedler@gmail.com</a></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="large-6 columns">
+    <h3>About</h3>
+    <p>I work with startups and non-profits, designing and developing websites that help them connect with their customers and consitutents. In our busy world, connecting with people, whether they be paying customers or people served by an organization, is increasingly difficult. I love the challenge of using web technologies to connect people and ultimately add value to their lives in some way. I focus on using open source software, which allows organizations and businesses to quickly build and scale websites and web applications so they can effectively connect with their users.</p>
+
+    <p>A user's experience on a website has a huge impact on how they perceive the organization, and ultimately how they respond to the information or services presented. I focus on making websites that are very usable and aesthetically appealing, and focus on content that is actionable. My goal isn't just to make an online brochure, but to help an organization connect with its target users through interactive tools, dynamic content, and social media connections. I enjoy the challenge of always learning new things and staying on the cutting edge of best practices and new approaches to problems, and I think that the open source community fosters this mentality.</p>
+
+    <p>I am a big believer in the power of open source software and the communities that come together to make them great. Clients find the flexibility of the software and support of the communities invaluable. Moreover, open source software helps keep IT costs under control.</p>
+
+  </div>
+  <div class="large-6 columns">
+    <h3>Skills</h3>
+    <ul>
+      <li>Developing websites with Drupal, PHP, mySQL, Javascript, jQuery, HTML and CSS.</li>
+      <li>Collaborating with a team to develop the design and functionality of a site.</li>
+      <li>Helping a client determine what purpose they want their website to serve, and clarify their vision for the site.</li>
+      <li>Using Git for version control and code deployment.</li>
+      <li>Integrating an e-commerce solutions to sell products, accept donations, or offer paid access to videos or other media.</li>
+      <li>Solving problems by researching to better understand the issue, and discover the
+      best solution.</li>
+      <li>Quickly learning and integrating new applications, frameworks, or languages.</li>
+    </ul>
+    <h3>Portfolio</h3>
+    <ul>
+      <li>Trailhead Church (Drupal, jQuery) - <a href="http://trailheadonline.org">http://trailheadonline.org</a></li>
+      <li>The Corners (HTML/CSS/jQuery, Foundation) - <a href="http://listentothecorners.com">http://listentothecorners.com</a></li>
+      <li>PennellChing, LLC (HTML/CSS/jQuery) - <a href="http://pennellching.com">http://pennellching.com</a></li>
+      <li>Feature development and front-end development for The Journey (Drupal, javascript, jQuery) - <a href="http://thejourney.org">http://thejourney.org</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row footer">
+  <div class="large-6">
+    <h2>Contact</h2>
+    <ul>
+      <li>Email: <a href="mailto:kraig.hufstedler@gmail.com">kraig.hufstedler@gmail.com</a></li>
+      <li>Phone: (815) 207.3576</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $(".fancy_title").lettering();
+  });
+</script>
+
+
+
 </body>
 </html>
