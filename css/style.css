@@ -68,6 +68,10 @@ a {
   text-decoration: underline;
 }
 
+h2 a {
+  font-size: .8em;
+}
+
 a:hover {
   color: #ebe9e5;
   font-style: oblique;
