@@ -1,9 +1,22 @@
-/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
-/* zurb.com */
-/* humanstxt.org */
+/* AUTHORSHIP */
+  Author: Site designed and developed by Kraig Hufstedler.
+  Purpose: Barebones personal promotional page.
 
 /* SITE */
   Standards: HTML5, CSS3
+  Framework: Zurb Foundation (http://foundation.zurb.com/)
   Components: jQuery, Orbit, Reveal
-  Software: Coda, Textmate, Git
-  Author: Kraig Hufstedler
+  Fonts: Typekit
+  Software: Sublime Text, Git
+  Host: WebFaction (http://webfaction.com)
+
+
+/* CREDITS */
+
+  Foundation: Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA (zurb.com)
+
+  Why humans.txt: humanstxt.org
+
+  Thanks to Subtle Patterns (http://subtlepatterns.com/) for background image.
+
+
