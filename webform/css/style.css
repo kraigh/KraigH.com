@@ -1,0 +1,52 @@
+#ziplabel {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+#ziplabel span {
+  float: left;
+  display: inline;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+#ziplabel input {
+  display: inline;
+  width: 180px;
+}
+
+.hidden-form {
+  display: none;
+}
+
+#modal-content h2 {
+  margin-top: 0px !important;
+  margin-bottom: 20px !important;
+}
+
+#modal-content h3 {
+  margin-top: 0px !important;
+  margin-bottom: 10px !important;
+}
+
+#featured p {
+  margin: 0.6em 0;
+}
+
+#featured h2.featured-subtitle {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+#modal-content p {
+  margin-bottom: 0px !important;
+}
+
+#modal-content input {
+  background: rgb(255, 255, 255) !important;
+  border: rgb(196, 196, 196) 1px solid !important;
+}
+
+#modal-content fieldset {
+  border: rgb(177, 177, 177) 1px solid !important;
+}
