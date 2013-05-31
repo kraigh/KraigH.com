@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: http://edwardsvilleagent.com');
 $year = $_GET['year'];
 $make = $_GET['make'];
 $model = $_GET['model'];

@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: http://edwardsvilleagent.com');
 $vars = json_decode($_POST['vars'], TRUE);
 // $zip = $_POST['zipcode'];
 // $mainDriver = $_POST['mainDriverObj'];
