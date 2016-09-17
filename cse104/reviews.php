@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST)) {
+if (!empty($_POST)) {
     $data[] = $_POST;
     $allResults = file_get_contents('results.json');
     $tempArray = json_decode($allResults);
