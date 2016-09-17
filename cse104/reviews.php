@@ -4,7 +4,7 @@ if (!empty($_POST)) {
     $data[] = $_POST;
     $allResults = file_get_contents('results.json');
     $tempArray = json_decode($allResults);
-    if is_array($tempArray) {
+    if (is_array($tempArray)) {
         array_push($tempArray, $data);
     } else {
         $tempArray = $data;
