@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-    $.getJSON("reviews.php", function(data) {
+    $.getJSON("http://kraigh.com/reviews.php", function(data) {
         console.log(data);
     });
 });
