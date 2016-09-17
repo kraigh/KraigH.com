@@ -7,6 +7,7 @@ if (isset($_POST)) {
     array_push($tempArray, $data);
     $jsonData = json_encode($tempArray);
     file_put_contents('results.json', $jsonData;
+    header('Location: http://kraigh.com/cse104/index.html?success=1');
 } else {
     $jsonData = file_get_contents('results.json');
     return $jsonData;
