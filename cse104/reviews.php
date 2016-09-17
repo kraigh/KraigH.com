@@ -6,7 +6,7 @@ if (isset($_POST)) {
     $tempArray = json_decode($allResults);
     array_push($tempArray, $data);
     $jsonData = json_encode($tempArray);
-    file_put_contents('results.json', $jsonData;
+    file_put_contents('results.json', $jsonData);
     header('Location: http://kraigh.com/cse104/index.html?success=1');
     exit();
 } else {
