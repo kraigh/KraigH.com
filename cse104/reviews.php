@@ -11,8 +11,8 @@ if (!empty($_POST)) {
     }
     $jsonData = json_encode($tempArray);
     file_put_contents('results.json', $jsonData);
-    // header('Location: http://kraigh.com/cse104/index.html?success=1');
-    die();
+    header('Location: http://kraigh.com/cse104/index.html?success=1');
+    die(1);
 } else {
     $jsonData = file_get_contents('results.json');
     return $jsonData;
