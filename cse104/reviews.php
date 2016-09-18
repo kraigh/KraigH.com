@@ -1,6 +1,15 @@
 <?php
 
 if (!empty($_POST)) {
+    if (empty($_POST['name'])) {
+        $_POST['name'] = 'anonymous';
+    }
+    if (empty($_POST['greeted'])) {
+        $_POST['greeted'] = 'none';
+    }
+    if (empty($_POST['comments'])) {
+        $_POST['comments'] = 'none';
+    }
     $data[] = $_POST;
     $allResults = file_get_contents('results.json');
     $tempArray = json_decode($allResults);
