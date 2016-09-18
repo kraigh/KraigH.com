@@ -3,8 +3,8 @@ jQuery(document).ready(function ($) {
         $.each(data, function(index, val) {
             console.log(val);
             var starsHtml = '';
-            for (var i = 0; i <= 5; i++) {
-                if (i > val.rating) {
+            for (var i = 0; i < 5; i++) {
+                if (i > parseInt(val.rating, 10)) {
                     starsHtml += '<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>';
                 } else {
                     starsHtml += '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
