@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
             $('#review-'+index).append('<div class="col-md-3 review-name">'+val.name+'<br />'+starsHtml+'</div>');
             $('#review-'+index).append('<div class="col-md-2 review-menu">'+val.menu+'</div>');
             $('#review-'+index).append('<div class="col-md-3 review-greeted"><b>Was greeted when:</b> '+val.greeted+'</div>');
-            $('#review-'+index).append('<div class="col-md-4 review-comments"><b>Comments:</b> '+val.greeted+'</div>');
+            $('#review-'+index).append('<div class="col-md-4 review-comments"><b>Comments:</b> '+val.comments+'</div>');
         });
     });
 });
