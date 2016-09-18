@@ -4,7 +4,8 @@ jQuery(document).ready(function ($) {
             console.log(val);
             var starsHtml = '';
             for (var i = 0; i < 5; i++) {
-                if (i > parseInt(val.rating, 10)) {
+                // subtract 1 from rating since i starts at 0
+                if (i > (parseInt(val.rating, 10) - 1)) {
                     starsHtml += '<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>';
                 } else {
                     starsHtml += '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
