@@ -4,14 +4,14 @@ jQuery(document).ready(function ($) {
             console.log(val);
             var starsHtml = '';
             for (var i = 0; i <= 5; i++) {
-                if (i > data.rating) {
+                if (i > val.rating) {
                     starsHtml += '<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>';
                 } else {
                     starsHtml += '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
                 }
             }
             $('#reviews-list').append('<li id="review-'+index+'" class="list-group-item row"></li>');
-            $('#review-'+index).append('<div class="col-md-3 review-name>'+val.name+'<br />'+starsHtml+'</div>');
+            $('#review-'+index).append('<div class="col-md-3 review-name">'+val.name+'<br />'+starsHtml+'</div>');
             $('#review-'+index).append('<div class="col-md-2 review-menu">'+val.menu+'</div>');
             $('#review-'+index).append('<div class="col-md-3 review-greeted"><b>Was greeted when:</b> '+val.greeted+'</div>');
             $('#review-'+index).append('<div class="col-md-4 review-comments"><b>Comments:</b> '+val.greeted+'</div>');
