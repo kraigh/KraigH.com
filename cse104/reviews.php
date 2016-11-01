@@ -1,6 +1,9 @@
 <?php
 
+// If data is being submitted, process it and save
 if (!empty($_POST)) {
+
+    // Replace empty values with a default value
     if (empty($_POST['name'])) {
         $_POST['name'] = 'anonymous';
     }
@@ -10,19 +13,36 @@ if (!empty($_POST)) {
     if (empty($_POST['comments'])) {
         $_POST['comments'] = 'none';
     }
-    $data[] = $_POST;
+
+    // Create an array with the POST values
+    
+
+    // Load results from json file
     $allResults = file_get_contents('results.json');
+    // Parse json into array
     $tempArray = json_decode($allResults);
+
     if (is_array($tempArray)) {
+        // If values already exist, add our POST values
         array_push($tempArray, $_POST);
     } else {
-        $tempArray = $data;
+        // If no values exist (empty file) create new array
+        $tempArray = array($_POST);
     }
+
+    // Reverse array so newest are last
+    $tempArray = array_reverse($tempArray, true);
+
+    // Encode array as json and save to file
     $jsonData = json_encode($tempArray);
     file_put_contents('results.json', $jsonData);
+
+    // Redirect to reviews page
     header("Location: http://kraigh.com/cse104/index.html?success=1");
-    die(1);
+    die();
+
 } else {
+    // No data submitted, so this is a GET request for existing submissions. Return JSON.
     $jsonData = file_get_contents('results.json');
     echo $jsonData;
 }
