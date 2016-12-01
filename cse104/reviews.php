@@ -34,7 +34,7 @@ if (!empty($_POST)) {
     $tempArray = array_reverse($tempArray, true);
 
     // Encode array as json and save to file
-    $jsonData = json_encode($tempArray);
+    $jsonData = json_encode(array_values($tempArray));
     file_put_contents('results.json', $jsonData);
 
     echo $jsonData;
