@@ -3,6 +3,7 @@ var router = express.Router();
 const crypto = require('crypto');
 var moment = require('moment');
 
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -17,8 +18,8 @@ router.post('/', function(req, res, next) {
         .update(req.body.email)
         .digest('hex');
     var user = {
-        email: req.email,
-        name: req.name,
+        email: req.body.email,
+        name: req.body.name,
         apikey: hash
     }
     var MongoClient = require('mongodb').MongoClient
