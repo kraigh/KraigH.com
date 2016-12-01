@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 
         db.collection('users').findOne({'apikey': req.query.api_key}, function (err, user) {
             if (err) throw err
-            if (typeof(user._id) == 'undefined') {
+            if (!user) {
                 console.log('No user found');
                 res.send("Error: Invalid API key (no user found)");
             }
