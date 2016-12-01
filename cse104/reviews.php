@@ -31,10 +31,10 @@ if (!empty($_POST)) {
     }
 
     // Reverse array so newest are last
-    $tempArray = array_reverse($tempArray, true);
+    $tempArray = array_values($tempArray);
 
     // Encode array as json and save to file
-    $jsonData = json_encode(array_values($tempArray));
+    $jsonData = json_encode($tempArray);
     file_put_contents('results.json', $jsonData);
 
     echo $jsonData;
