@@ -16,6 +16,7 @@ xhttp.open("GET", "reviews.php", true);
 xhttp.send();
 
 function renderReview(review) {
+    console.log("Rendering review");
     // Create a new li for this review
     var reviewItem = document.createElement("li");
     // Set two classes on the new li itetm
