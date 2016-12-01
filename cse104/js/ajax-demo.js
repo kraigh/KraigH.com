@@ -1,9 +1,14 @@
+// Load existing reviews
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+        // JSON parse the responseText
         var reviews = JSON.parse(this.responseText);
         console.log(reviews);
+        // The response returns an array of objects, so loop through them
         for (var i = 0; i < reviews.length; i++) {
+            // To keep our code clean, we created a function to turn a
+            // review object into HTML and add it to the page
             renderReview(reviews[i]);
         }
     } else if (this.readyState == 4) {
@@ -15,6 +20,43 @@ xhttp.onreadystatechange = function() {
 xhttp.open("GET", "reviews.php", true);
 xhttp.send();
 
+// Add an event listener for submitting the form
+document.getElementById("review-form").addEventListener("submit", submitForm);
+
+function submitForm(event) {
+    event.preventDefault();
+
+
+    var name = document.getElementById("review-form").elements.namedItem("name").value;
+    var menu = document.getElementById("review-form").elements.namedItem("menu").value;
+    var greeted = document.getElementById("review-form").elements.namedItem("greeted[]").value;
+    var rating = document.getElementById("review-form").elements.namedItem("rating").value;
+    var comments = document.getElementById("review-form").elements.namedItem("comments").value;
+
+    // console.log(name);
+    // console.log(menu);
+    // console.log(greeted);
+    // console.log(rating);
+    // console.log(comments);
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        console.log(this.readyState);
+        if (this.readyState == 4 && this.status == 200) {
+           console.log(this.responseText);
+        }
+    };
+
+    xhttp.open("POST", "reviews.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("?name=" + name + "&menu=" + menu + "&greeted=" + greeted + "&rating=" + rating + "&comments=" + comments);
+
+
+}
+
+
+// This is the utility function to take a review object,
+// create html elements out of it,
+// and add the new html to the page
 function renderReview(review) {
     console.log("Rendering review");
     // Create a new li for this review
@@ -73,35 +115,3 @@ function renderReview(review) {
     // Add review li to reviews list ul
     document.getElementById("reviews-list").appendChild(reviewItem);
 }
-
-    // document.getElementById("review-form").addEventListener("submit", submitForm);
-
-    // function submitForm(event) {
-    //     event.preventDefault();
-
-
-    //     var name = document.getElementById("review-form").elements.namedItem("name").value;
-    //     var menu = document.getElementById("review-form").elements.namedItem("menu").value;
-    //     var greeted = document.getElementById("review-form").elements.namedItem("greeted[]").value;
-    //     var rating = document.getElementById("review-form").elements.namedItem("rating").value;
-    //     var comments = document.getElementById("review-form").elements.namedItem("comments").value;
-
-    //     // console.log(name);
-    //     // console.log(menu);
-    //     // console.log(greeted);
-    //     // console.log(rating);
-    //     // console.log(comments);
-    //     var xhttp = new XMLHttpRequest();
-    //     xhttp.onreadystatechange = function() {
-    //         console.log(this.readyState);
-    //         if (this.readyState == 4 && this.status == 200) {
-    //            console.log(this.responseText);
-    //         }
-    //     };
-
-    //     xhttp.open("POST", "reviews.php", true);
-    //     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    //     xhttp.send("?name=" + name + "&menu=" + menu + "&greeted=" + greeted + "&rating=" + rating + "&comments=" + comments);
-
-
-    // }
