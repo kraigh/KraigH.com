@@ -20,32 +20,44 @@ xhttp.onreadystatechange = function() {
 xhttp.open("GET", "reviews.php", true);
 xhttp.send();
 
+
 // Add an event listener for submitting the form
 document.getElementById("review-form").addEventListener("submit", submitForm);
 
-function submitForm() {
-    // Prevent the default form submission
-    this.preventDefault();
+// Function to handle form submit, use "event" parameter
+function submitForm(event) {
+    // Stop the default form submit
+    event.preventDefault();
 
-    // Get form values using "this" as a reference to the form
-    var name = this.elements.namedItem("name").value;
-    var menu = this.elements.namedItem("menu").value;
-    var greeted = this.elements.namedItem("greeted[]").value;
-    var rating = this.elements.namedItem("rating").value;
-    var comments = this.elements.namedItem("comments").value;
+    // Create variables with form values
+    var name = document.getElementById("review-form").elements.namedItem("name").value;
+    var menu = document.getElementById("review-form").elements.namedItem("menu").value;
+    var greeted = document.getElementById("review-form").elements.namedItem("greeted[]").value;
+    var rating = document.getElementById("review-form").elements.namedItem("rating").value;
+    var comments = document.getElementById("review-form").elements.namedItem("comments").value;
 
+    // Initialize AJAX Request
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        console.log(this.readyState);
         if (this.readyState == 4 && this.status == 200) {
-           console.log(this.responseText);
+            // JSON parse the new review object
+            var newReview = JSON.parse(this.responseText);
+            // Render the new review object (add it to the HTML)
+            renderReview(newReview);
+        } else if (this.readyState == 4) {
+            // Request was successful but server returned an error
+            console.log(this.responseText);
         }
     };
+    // POST because we're sending data
     xhttp.open("POST", "reviews.php", true);
+    // Required for a POST AJAX
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Passing along the required parameters.
     xhttp.send("name=" + name + "&menu=" + menu + "&greeted=" + greeted + "&rating=" + rating + "&comments=" + comments);
-}
 
+
+}
 
 // This is the utility function to take a review object,
 // create html elements out of it,
