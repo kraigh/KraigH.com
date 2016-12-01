@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript Demo</title>
+</head>
+<body>
+<script>
+// Math Demo - Average Grade
+var grades = [100, 95, 93, 94, 80, 70, 45, 63, 80, 90, 81];
+var sum = 0;
+// Loop through each grade in the array and add it to the sum
+for (i=0; i<grades.length; i++) {
+    sum += grades[i];
+}
+// Calculate the average with division, using the "length" property of the array
+var average = sum / grades.length;
+
+
+// Objects Example: Cars
+var car1 = {
+    make: "Honda",
+    model: "CR-V",
+    year: 1997,
+    owner: "",
+    price: 2000,
+    buy: function(person) {
+        if (person.bankAccount >= this.price) {
+            // Set the owner of this car to the person buying it
+            this.owner = person.name;
+            // Remove the cost of the car from the persons bank account
+            person.bankAccount -= this.price;
+            // Set this car object to the person's car property
+            person.car = this;
+        } else {
+            // The person does not have enough money to buy the car
+            alert("Too Expensive!");
+        }
+    }
+}
+
+// Initialize a Person
+var person1 = {
+    name: "Kraig",
+    bankAccount: 3000,
+    car: ""
+}
+console.log("Car before being bought: "+JSON.stringify(car1));
+console.log("Person1 before buying car: "+JSON.stringify(person1));
+car1.buy(person1);
+console.log("Car after being bought: "+JSON.stringify(car1));
+console.log("Person1 after buying car: "+JSON.stringify(person1));
+
+
+// While loop demo - Dice Roll Simulator
+var snakeEyes = false;
+var counter = 0;
+// While loop
+while (snakeEyes == false) {
+    // Two dice rolls
+    var first = 1 + Math.floor(Math.random() * 6);
+    var second = 1 + Math.floor(Math.random() * 6);
+    counter ++;
+    if (first == 1 && second == 1) {
+        // If both dice rolls are a 1, set snakeEyes to true which will break the loop
+        snakeEyes = true;
+    }
+}
+console.log("It took "+counter+" tries to get snake eyes!");
+</script>
+
+
+<!-- DOM Manipulation Demo -->
+<h1 id="intro-header">My Intro</h1>
+<p id="intro-text">Some text with a <a id="intro-link" href="https://www.test.com/one.html">link</a></p>
+<p id="intro-text">Some more text with a <a id="intro-link" href="https://www.test.com/one.html">link</a></p>
+<p id="intro-text">Even some more text with a <a id="intro-link" href="https://www.test.com/two.html">link</a></p>
+<script>
+// Change the text of a heading
+document.getElementById("intro-header").innerHTML = "A New Header";
+// Change the style of an element
+document.getElementById("intro-text").style.color = "red";
+// Change the HREF of a link
+// document.getElementById("intro-link").href = "https://www.test.com/two.html";
+// Alternative way to change the HREF of a link
+// document.getElementById("intro-link").setAttribute("href", "https://www.test.com/three.html");
+// Change the HREF of all links using a loop
+var links = document.getElementsByTagName("a");
+for (var i = 0; i < links.length; i++) {
+    console.log(links[i].href);
+    if (links[i].href == "https://www.test.com/one.html") {
+        links[i].href = "https://www.test.com/four.html";
+    }
+}
+</script>
+
+<!-- Creating new HTML Elements Demo -->
+<div id="section1">
+    <h1>My Heading</h1>
+    <h1>My Other Heading</h1>
+</div>
+<script>
+// Get all of the headings in #section1
+var headings = document.querySelectorAll("#section1 h1");
+// Loop through all of the headings and remove them
+for (var i = 0; i < headings.length; i++) {
+    document.getElementById("section1").removeChild(headings[i]);
+}
+// Create a new heading
+var newHeading = document.createElement("h1");
+// Add some text to the new heading
+newHeading.innerHTML = "A New Heading";
+// Write the new heading inside the #section1 element
+document.getElementById("section1").appendChild(newHeading);
+
+// Create paragraph element
+var p1 = document.createElement("p");
+// Add a class to the paragraph element
+p1.setAttribute("class", "important");
+// Set the text of the paragraph element
+p1.innerHTML = "Some text goes here";
+// Write the new paragraph inside the #section1 element
+document.getElementById("section1").appendChild(p1);
+</script>
+
+<!-- Event Demo -->
+<a href="#" id="click-me">Clicked Here 0 Times</a>
+<script>
+// Initialize counter
+var clickcounter = 0;
+// Add click event listener to link
+document.getElementById("click-me").addEventListener("click", incrementText);
+// Function that is called when link is clicked
+function incrementText() {
+    // Increment Counter
+    clickcounter++;
+    // Write the HTML of the clicked element
+    this.innerHTML = "Clicked Here " + clickcounter + " Times";
+}
+
+// Alternative event format:
+// document.getElementById("click-me").onclick = function(){
+//     clickcounter++;
+//     this.innerHTML = "Clicked Here " + clickcounter + " Times";
+// }
+</script>
+</body>
+</html>

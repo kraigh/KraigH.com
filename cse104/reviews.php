@@ -15,7 +15,7 @@ if (!empty($_POST)) {
     }
 
     // Create an array with the POST values
-    
+
 
     // Load results from json file
     $allResults = file_get_contents('results.json');
@@ -37,8 +37,7 @@ if (!empty($_POST)) {
     $jsonData = json_encode($tempArray);
     file_put_contents('results.json', $jsonData);
 
-    // Redirect to reviews page
-    header("Location: http://kraigh.com/cse104/index.html?success=1");
+    echo $jsonData;
     die();
 
 } else {
