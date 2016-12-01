@@ -37,7 +37,7 @@ function renderReview(review) {
     // Create div for name and rating
     var nameDiv = document.createElement("div");
     // Add classes to div
-    nameDiv.setAttribute("class", "col-md-4 review-name");
+    nameDiv.setAttribute("class", "col-md-3 review-name");
     // Set innerHTML of div to reviewer's name, and HTML for stars rating
     nameDiv.innerHTML = review.name + "</br>" + starsHtml;
     // Add nameDiv to new review li
