@@ -18,12 +18,13 @@ router.get('/', function(req, res, next) {
             if (!user) {
                 console.log('No user found');
                 res.send("Error: Invalid API key (no user found)");
+            } else {
+                db.collection('recommendations').find({'users_id': user._id}).toArray(function (err, recs) {
+                    if (err) throw err
+                    console.log(recs);
+                    res.send(recs);
+                });
             }
-            db.collection('recommendations').find({'users_id': user._id}).toArray(function (err, recs) {
-                if (err) throw err
-                console.log(recs);
-                res.send(recs);
-            });
         });
     });
 
