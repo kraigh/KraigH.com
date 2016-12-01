@@ -41,9 +41,9 @@ function submitForm(event) {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             // JSON parse the new review object
-            // var newReview = JSON.parse(this.responseText);
+            var newReview = JSON.parse(this.responseText);
             // Render the new review object (add it to the HTML)
-            // renderReview(newReview);
+            renderReview(newReview);
             // Clear out the form values
             document.getElementById("review-form").elements.namedItem("name").value = '';
             document.getElementById("review-form").elements.namedItem("menu").value = 'steak';
