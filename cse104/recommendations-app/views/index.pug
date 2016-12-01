@@ -23,5 +23,23 @@ block content
                         h3.panel-title Your API Key
                     div.panel-body 
                         samp#api-key wegoin239g8g
+        h2 AJAX Calls
+        p After you have generated an API key, save it somewhere so you can reference it in your code. You now can use this API key when making AJAX calls.
+        h3 GET All Recommendations
+        p When your page loads, you want to make an AJAX request to get all existing recommendations tied to your API key, so you can add those recommendations to your HTML. Do this by making a GET AJAX request to this URL: 
+        pre http://cse104.kraigh.com/recommendations?api_key=123xyz
+        p Note: you need to replace "123xyz" above with your API key.
+        p This AJAX request will return an array of objects. Each object will be a recommendation that has been previously submitted with your API key. These objects have a "name" property and a "text" property containing the recommender's name and their recommendation. Note: Before you have successfully submitted any recommendations, this array will be empty.
+        h4 Javascript Example
+        pre
+            | var xhttp = new XMLHttpRequest();
+            | xhttp.onreadystatechange = function() {
+            |     if (this.readyState == 4 && this.status == 200) {
+            |         var recommendations = JSON.parse(this.responseText);
+            |         console.log(recommendations);
+            |     }
+            | };
+            | xhttp.open("GET", "http://cse104.kraigh.com/recommendations?api_key=123xyz", true);
+            | xhttp.send();
 
 
