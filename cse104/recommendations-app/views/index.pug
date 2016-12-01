@@ -11,10 +11,10 @@ block content
                 form(method='POST' action='/users' id='api-form')
                     div.form-group
                         label(for='name') Name:
-                        input#name.form-control(type='text', placeholder='first and last' name='name')
+                        input#name.form-control(type='text', placeholder='first and last' name='name' required='required')
                     div.form-group
                         label(for='email') WUSTL Email:
-                        input#email.form-control(type='email', placeholder='name@email.com' name='email')
+                        input#email.form-control(type='email', placeholder='name@email.com' name='email' required='required')
                     button.btn.btn-primary(type='submit') Generate API Key
         div.row#api-key-container
             div.col-md-8.col-md-offset-2
@@ -41,5 +41,42 @@ block content
             | };
             | xhttp.open("GET", "http://cse104.kraigh.com/recommendations?api_key=123xyz", true);
             | xhttp.send();
+        h3 POST New Recommendations
+        p When your recommendation form is submitted, you want to trigger a Javascript event that will make an AJAX call to submit your new recommendation to the server, and if saving it is successful, add your new recommendation to the page's HTML. Do this by making an AJAX POST request to this URL:
+        pre http://cse104.kraigh.com/recommendations
+        p Your POST will need the following parameters:
+        dl
+            dt api_key
+            dd Your personal API key
+            dt name
+            dd The "Name" field of your recommendation form
+            dt text
+            dd The "Text" field of your recommendation form
+        p If unsuccessful, this POST request will return a text error. If successful, it will return a single object containing the recommendation that has been saved. This object will have a "name" and "text" property that you can use to add a new HTML element to your existing recommendations.
+        h4 Javascript Example
+        pre
+            | // Setting variables for form inputs (get from HTML form)
+            | var name = "Some Name";
+            | var text = "Some Text";
+            | var api_key = "123abc";
+            | // Initalize AJAX Request
+            | var xhttp2 = new XMLHttpRequest();
+            | // Response handler
+            | xhttp2.onreadystatechange = function() {
+            |     // Wait for readyState = 4
+            |     if (this.readyState == 4 && this.status == 200) {
+            |         // If this.status == 200, good reponse from server
+            |         var recommendation = JSON.parse(this.responseText);
+            |         console.log(recommendation.name);
+            |         console.log(recommendation.text)
+            |     } else if (this.readyState == 4) {
+            |         // this.status !== 200, error from server
+            |         console.log(this.responseText);
+            |     }
+            | };
+            | xhttp2.open("POST", "http://cse104.kraigh.com/recommendations", true);
+            | xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            | xhttp2.send("api_key="+api_key+"&name="+name+"&text="+text);
+        p Note: This Javascript example also handles non successful AJAX requests and logs the returned error to the console.
 
 
