@@ -4,7 +4,7 @@ xhttp.onreadystatechange = function() {
         var reviews = JSON.parse(this.responseText);
         console.log(reviews);
         for (var i = 0; i < reviews.length; i++) {
-            renderReview(review[i]);
+            renderReview(reviews[i]);
         }
     } else if (this.readyState == 4) {
         // this.readyState is 4 but this.status is NOT 200
