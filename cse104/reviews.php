@@ -37,7 +37,7 @@ if (!empty($_POST)) {
     $jsonData = json_encode($tempArray);
     file_put_contents('results.json', $jsonData);
 
-    echo $jsonData;
+    echo $_POST;
     die();
 
 } else {
