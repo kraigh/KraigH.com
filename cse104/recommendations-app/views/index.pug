@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    div.container
+        h1= title
+        p This app is used to save and retrieve student recommendations for use on student profile websites.
+        p The first step is getting an API key. Please type your WUSTL email address in the field below and click "submit". A unique API key will be generated that you can use to submit and retrieve recommendations.
+        // register form
+        div.row
+            div.col-md-6.col-md-offset-3
+                form(method='POST' action='/users' id='api-form')
+                    div.form-group
+                        label(for='name') Name:
+                        input#name.form-control(type='text', placeholder='first and last' name='name')
+                    div.form-group
+                        label(for='email') WUSTL Email:
+                        input#email.form-control(type='email', placeholder='name@email.com' name='email')
+                    button.btn.btn-primary(type='submit') Generate API Key
+        div.row#api-key-container
+            div.col-md-8.col-md-offset-2
+                div.panel.panel-success
+                    div.panel-heading
+                        h3.panel-title Your API Key
+                    div.panel-body 
+                        samp#api-key wegoin239g8g
+
+
