@@ -3,7 +3,6 @@ var router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-
     if (typeof(req.query.api_key) == 'undefined') {
         console.log('No api key passed');
         res.status(406);
@@ -35,9 +34,9 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/', function(req, res, next) {
-
     if (typeof(req.body.api_key) == 'undefined') {
         console.log('No api key passed');
+        console.log(req.body);
         res.status(406);
         res.send("Error: No API key passed.");
     } else if (typeof(req.body.name) == 'undefined') {
