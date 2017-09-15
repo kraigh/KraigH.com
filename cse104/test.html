@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>testing</title>
+
+</head>
+<body>
+    <form id="my-form" action="google.com" method="post">
+        <input name="name" type="text" />
+        <textarea name="comments"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="success-message" style="display: none;">Thank you for your comments!</p>
+    <div id="all-reviews"></div>
+    <script>
+    var api_key = "96d1e13768e9230d92b82f3f077c0da8b9de421b558ee5d4c0505d506f29adf3"
+
+    document.getElementById("my-form").addEventListener("submit", submitForm);
+
+    function submitForm(event) {
+        event.preventDefault();
+        console.log('form submitted');
+        var name = document.getElementById("my-form").elements.namedItem("name").value;
+        var comments = document.getElementById("my-form").elements.namedItem("comments").value;
+        // Initalize AJAX Request
+        var xhttp2 = new XMLHttpRequest();
+        // Response handler
+        xhttp2.onreadystatechange = function() {
+            // Wait for readyState = 4
+            if (this.readyState == 4 && this.status == 200) {
+                // If this.status == 200, good reponse from server
+                console.log(this.responseText);
+                // Clearing out form fields
+                document.getElementById("my-form").elements.namedItem("name").value = '';
+                document.getElementById("my-form").elements.namedItem("comments").value = '';
+                // Showing success message
+                document.getElementById("success-message").style.display = "block";
+                // Add new comments to page
+                var newReview = JSON.parse(this.responseText);
+                console.log(newReview);
+                renderReview(newReview);
+
+            } else if (this.readyState == 4) {
+                // this.status !== 200, error from server
+                console.log(this.responseText);
+            }
+        };
+        xhttp2.open("POST", "https://cse104.kraigh.com/recommendations", true);
+        xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp2.send("api_key="+api_key+"&name="+name+"&text="+comments);
+    }
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var reviews = JSON.parse(this.responseText);
+            console.log(reviews);
+            for (var i = 0; i < reviews.length; i++) {
+                renderReview(reviews[i]);
+            }
+        }
+    };
+    xhttp.open("GET", "https://cse104.kraigh.com/recommendations?api_key="+api_key, true);
+    xhttp.send();
+
+    function renderReview(review) {
+        var reviewItem = document.createElement("p");
+        reviewItem.innerHTML = 'Name: ' + review.name;
+        reviewItem.innerHTML += ', Comments: ' + review.text;
+        document.getElementById("all-reviews").appendChild(reviewItem);
+    }
+
+    </script>
+</body>
+</html>

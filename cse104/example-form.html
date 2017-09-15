@@ -145,7 +145,7 @@
         // Required for a POST AJAX
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         // Passing along the required parameters.
-        xhttp.send("name=" + name + "&menu=" + menu + "&greeted=" + greeted + "&rating=" + rating + "&comments=" + comments);
+        xhttp.send("name=" + name + "&menu=" + menu + "&greeted[]=" + greeted + "&rating=" + rating + "&comments=" + comments);
 
 
     }
