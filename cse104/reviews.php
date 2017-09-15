@@ -37,7 +37,7 @@ if (!empty($_POST)) {
     $jsonData = json_encode($tempArray);
     file_put_contents('results.json', $jsonData);
 
-    echo json_encode($_POST);
+    header("Location: https://kraigh.com/cse104/index.html");
     die();
 
 } else {
