@@ -9,6 +9,9 @@ if (!empty($_POST)) {
     }
     if (empty($_POST['greeted'])) {
         $_POST['greeted'] = 'none';
+    } else {
+        $greeted_list = implode(', ', $_POST['greeted']);
+        $_POST['greeted'] = $greeted_list;
     }
     if (empty($_POST['comments'])) {
         $_POST['comments'] = 'none';
