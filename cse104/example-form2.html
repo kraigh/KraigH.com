@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Restaurant Review</title>
+</head>
+
+<body>
+    <form action="http://kraigh.com/cse104/reviews.php" method="post">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Full Name" />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" />
+        </fieldset>
+        <fieldset>
+            <legend>Your Review</legend>
+            <label for="menu">Menu Selection</label>
+            <select name="menu" id="menu">
+                <option value="steak">Steak</option>
+                <option value="chicken">Chicken</option>
+                <option value="vegetarian">Vegetarian</option>
+            </select>
+            <label for="rating">Rate Your Meail (1-5)</label>
+            <input type="radio" name="rating" value="1" /> 1
+            <input type="radio" name="rating" value="2" /> 2
+            <input type="radio" name="rating" value="3" /> 3
+            <input type="radio" name="rating" value="4" /> 4
+            <input type="radio" name="rating" value="5" /> 5
+            </div>
+            <label>
+                <input type="checkbox" name="greeted[]" value="entered" /> Was greeted when you entered
+                <br />
+            </label>
+            <label>
+                <input type="checkbox" name="greeted[]" value="exited" /> Was greeted when you exited
+                <br />
+            </label>
+            <textarea name="comments">Your Comments Here</textarea>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>
