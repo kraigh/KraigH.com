@@ -1,0 +1,21 @@
+section {
+    overflow: auto;
+    width: 100%;
+    margin-bottom: 30px;
+}
+article {
+    width: 33.33%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0px 12px;
+}
+
+article .image-container {
+    height: 250px;
+    overflow: hidden;
+}
+
+article img {
+    width: 100%;
+    margin: 0px auto;
+}
