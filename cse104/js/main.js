@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
     // get JSON data from server
-    $.getJSON("http://kraigh.com/cse104/reviews.php", function(data) {
+    $.getJSON("//kraigh.com/cse104/reviews.php", function(data) {
         // Loop through each JSON item
         $.each(data, function(index, val) {
             console.log(val);
